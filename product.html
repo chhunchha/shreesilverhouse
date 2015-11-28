@@ -1,0 +1,10 @@
+<img class="product-image" ng-src="{{product.image}}"></img>
+<div class="on-sale" ng-show={{product.onSale}}>
+	<span>Off <br> {{product.discount}}</span>
+</div>
+<div class="product-details">
+	<div class="product-price">Price: {{product.price}} Rs.</div>
+	<div>{{product.name}}</div>
+	<div>{{product.type}}</div>
+	<div>{{product.description}}</div>
+</div>
