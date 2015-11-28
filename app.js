@@ -56,7 +56,7 @@ app.controller('shreeCtrl', function($scope, $http, $uibModal) {
 
 		modalInstance.result.then(function () {
 		}, function () {
-			$log.info('Modal dismissed at: ' + new Date());
+			//console.log('Modal dismissed at: ' + new Date());
 		});
 	};
 
