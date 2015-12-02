@@ -64,6 +64,8 @@ app.controller('shreeCtrl', function($scope, $http, $uibModal) {
 	};
 
 	$scope.onSale = function() {
+		$scope.currentPage = 1;
+
 		if($scope.filter.onSale) {
 			$scope.filter.onSale = '';
 			$scope.onSaleButtonCaption = "On Sale";
@@ -75,6 +77,7 @@ app.controller('shreeCtrl', function($scope, $http, $uibModal) {
 	}
 
 	$scope.selectType = function(type) {
+		$scope.currentPage = 1;
 		$scope.filter.selected = true;
 		if(type == "All") {
 			$scope.filter.label = "All";
