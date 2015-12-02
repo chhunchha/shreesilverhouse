@@ -1,4 +1,4 @@
-var app = angular.module('shree', ['ngScrollbars','ui.bootstrap']);
+var app = angular.module('shree', ['ngScrollbars','ui.bootstrap','angularUtils.directives.dirPagination']);
 
 app.config(function (ScrollBarsProvider) {
 	ScrollBarsProvider.defaults = {
@@ -17,6 +17,9 @@ app.config(function (ScrollBarsProvider) {
 
 app.controller('shreeCtrl', function($scope, $http, $uibModal) {
 
+	$scope.currentPage = 1;
+  	$scope.pageSize = 8;
+
 	$scope.onSaleButtonCaption = "On Sale";
 	$scope.activePage = "home";
 
@@ -24,7 +27,7 @@ app.controller('shreeCtrl', function($scope, $http, $uibModal) {
 		$scope.activePage = page;
 	}
 
-	$scope.type = { selected : false, label :"Show me", filterBy: ''};
+	$scope.filter = { selected : false, label :"All", filterBy: '', onSale: ''};
 
 	var dropboxUrl = "https://dl.dropboxusercontent.com/s/pz7xdx4amysvrur/";
 	$scope.logo_path = "https://dl.dropboxusercontent.com/s/0sjmnapm479345y/shreesilverhouse-logo1.png";
@@ -61,24 +64,24 @@ app.controller('shreeCtrl', function($scope, $http, $uibModal) {
 	};
 
 	$scope.onSale = function() {
-		if($scope.type.onSale) {
-			$scope.type.onSale = '';
+		if($scope.filter.onSale) {
+			$scope.filter.onSale = '';
 			$scope.onSaleButtonCaption = "On Sale";
 		}
 		else {
-			$scope.type.onSale = true;
+			$scope.filter.onSale = true;
 			$scope.onSaleButtonCaption = "Show All";
 		}
 	}
 
 	$scope.selectType = function(type) {
-		$scope.type.selected = true;
+		$scope.filter.selected = true;
 		if(type == "All") {
-			$scope.type.label = "Show me";
-			$scope.type.filterBy = '';
+			$scope.filter.label = "All";
+			$scope.filter.filterBy = '';
 		} else {
-			$scope.type.label = type;
-			$scope.type.filterBy = type;
+			$scope.filter.label = type;
+			$scope.filter.filterBy = type;
 		}
 	};
 });
@@ -88,9 +91,16 @@ app.directive('product', function() {
 		templateUrl: 'product.html'
 	};
 });
+
 app.directive('navBar', function() {
 	return {
 		templateUrl: 'navBar.html'
+	};
+});
+
+app.directive('sidebar', function() {
+	return {
+		templateUrl: 'sidebar.html'
 	};
 });
 

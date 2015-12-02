@@ -1,6 +1,6 @@
 body {
   font-family: helvetica,verdana;
-  background: url("https://dl.dropboxusercontent.com/s/dcc7c2me5lja9c5/wooden-background.png");
+  /*background: url("https://dl.dropboxusercontent.com/s/dcc7c2me5lja9c5/wooden-background.png");*/
   letter-spacing: 0.6px;
   font-size: 14px;
 }
@@ -97,6 +97,49 @@ navItem.active a {
   display: inline-block;
 }
 
+
+/* Sidebar */
+.sidebar {
+  top: 60px;
+  position: absolute;
+}
+
+.sidebar ul {
+  list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+    position: fixed; /* Make it stick, even on scroll */
+    overflow: auto; /* Enable scrolling if the sidenav has too much content */
+}
+
+.sidebar li a {
+    display: block;
+    color: #000;
+    padding: 8px 0 8px 16px;
+    text-decoration: none;
+}
+
+.sidebar li a:hover {
+    background-color: #555;
+    color: white;
+}
+
+.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* */
+.pageControl {
+    float: right;
+    display: inline-block;
+    position: absolute;
+    top: -10px;
+    right: 315px;
+}
+
 .products-container {
   /*border: 1px solid;*/
   max-height: 800px;
@@ -104,11 +147,11 @@ navItem.active a {
   /* max-width : 1400px;*/
   position: relative;
   top:50px;
-  width: 100%;
-  max-width: 1400px;
+  width: calc(100% - 200px);
+  /*max-width: 1400px;*/
   overflow-x: hidden;
   overflow-y: auto;
-  margin: 0px auto;
+  margin: 0px auto 0px 200px;
 }
 
 
@@ -125,30 +168,33 @@ navItem.active a {
   /*  overflow: hidden;*/
   position: relative;
   overflow: visible;
+  border: 1px solid #E4E4E4;
 }
 
 .product-image {
   height: 200px;
   width: 100%;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+  padding: 10px;
+ /* border-top-left-radius: 20px;
+  border-top-right-radius: 20px;*/
 }
 
 .product-details {
   padding-top: 24px;
   position: relative; 
-  background-color: white;
+/*  background-color: white;*/  
   overflow-y: auto;
   height: 115px;
-  padding-left: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .product-price {
   position: absolute;
-  right: 0px;
+  right: 10px;
   top: 0px;
   color: orange;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 800;
 }
 

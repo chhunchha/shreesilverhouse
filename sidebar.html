@@ -1,0 +1,4 @@
+<ul>
+	<li ng-class="type == filter.label ? 'active' : ''" ng-repeat="type in types" role="menuitem" ng-click="selectType(type)"><a  href="#">{{type}}</a></li>
+	<li ng-class="'All' == filter.label ? 'active' : ''" ng-click="selectType('All')"><a>All</a></li>
+</ul>
