@@ -133,11 +133,10 @@ navItem.active a {
 
 /* */
 .pageControl {
-    float: right;
     display: inline-block;
-    position: absolute;
-    bottom: 70px;
-    left: 210px;
+    position: relative;
+    margin-top: -15px;
+    margin-left: 10px;
 }
 
 .products-container {
@@ -184,7 +183,7 @@ navItem.active a {
   position: relative; 
 /*  background-color: white;*/  
   overflow-y: auto;
-  height: 115px;
+  height: 110px;
   padding-left: 10px;
   padding-right: 10px;
 }
